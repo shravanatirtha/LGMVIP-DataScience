@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Document created by Neural Engine-->
+<NeuralDesignerProject ProjectType="Classification">
+   <Description Id="r0czqG"></Description>
+   <DataSet>
+      <DataFile>
+         <FileType>csv</FileType>
+         <DataFileName>C:/Users/STC/Downloads/iris_flowers.csv</DataFileName>
+         <Separator>Comma</Separator>
+         <ColumnsNames>1</ColumnsNames>
+         <RowsLabels>0</RowsLabels>
+         <MissingValuesLabel>NA</MissingValuesLabel>
+         <LagsNumber>0</LagsNumber>
+         <StepsAhead>0</StepsAhead>
+         <TimeColumn></TimeColumn>
+      </DataFile>
+      <Columns>
+         <ColumnsNumber>5</ColumnsNumber>
+         <Column Item="1">
+            <Name>sepal_length</Name>
+            <Scaler>MeanStandardDeviation</Scaler>
+            <ColumnUse>Input</ColumnUse>
+            <Type>Numeric</Type>
+         </Column>
+         <Column Item="2">
+            <Name>sepal_width</Name>
+            <Scaler>MeanStandardDeviation</Scaler>
+            <ColumnUse>Input</ColumnUse>
+            <Type>Numeric</Type>
+         </Column>
+         <Column Item="3">
+            <Name>petal_length</Name>
+            <Scaler>MeanStandardDeviation</Scaler>
+            <ColumnUse>Input</ColumnUse>
+            <Type>Numeric</Type>
+         </Column>
+         <Column Item="4">
+            <Name>petal_width</Name>
+            <Scaler>MeanStandardDeviation</Scaler>
+            <ColumnUse>Input</ColumnUse>
+            <Type>Numeric</Type>
+         </Column>
+         <Column Item="5">
+            <Name>class</Name>
+            <Scaler>MinimumMaximum</Scaler>
+            <ColumnUse>Target</ColumnUse>
+            <Type>Categorical</Type>
+            <Categories>iris_setosa;iris_versicolor;iris_virginica</Categories>
+            <CategoriesUses>Target;Target;Target</CategoriesUses>
+         </Column>
+      </Columns>
+      <Samples>
+         <SamplesNumber>150</SamplesNumber>
+         <SamplesUses>0 0 1 0 0 0 0 1 1 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 2 2 2 0 0 1 0 2 0 1 2 0 1 2 1 2 0 0 0 1 2 1 0 0 1 0 1 0 0 2 0 2 1 2 0 2 1 2 0 2 0 0 0 0 1 2 0 1 0 0 0 0 1 2 0 0 2 0 0 0 0 0 1 2 2 0 1 0 2 0 0 1 0 0 1 0 0 2 1 0 0 2 0 0 0 2 0 0 0 0 0 2 0 0 0 0 2 2 1 0 1 1 0 0 0 0 0 0 1 0 0 2 1 0 2 0 0 1 2 0</SamplesUses>
+      </Samples>
+      <MissingValues>
+         <MissingValuesMethod>Mean</MissingValuesMethod>
+         <MissingValuesNumber>0</MissingValuesNumber>
+      </MissingValues>
+      <PreviewData>
+         <PreviewSize>4</PreviewSize>
+         <Row Item="1">sepal_length,sepal_width,petal_length, petal_width,class</Row>
+         <Row Item="2">5.1,3.5,1.4,0.2,iris_setosa</Row>
+         <Row Item="3">4.9,3,1.4,0.2,iris_setosa</Row>
+         <Row Item="4">5.9,3,5.1,1.8,iris_virginica</Row>
+      </PreviewData>
+   </DataSet>
+   <NeuralNetwork>
+      <Inputs>
+         <InputsNumber>4</InputsNumber>
+         <Input Index="1">sepal_length</Input>
+         <Input Index="2">sepal_width</Input>
+         <Input Index="3">petal_length</Input>
+         <Input Index="4">petal_width</Input>
+      </Inputs>
+      <Layers>
+         <LayersTypes>Scaling Perceptron Probabilistic</LayersTypes>
+         <ScalingLayer>
+            <ScalingNeuronsNumber>4</ScalingNeuronsNumber>
+            <ScalingNeuron Index="1">
+               <Minimum>4.3</Minimum>
+               <Maximum>7.9</Maximum>
+               <Mean>5.84333</Mean>
+               <StandardDeviation>0.828066</StandardDeviation>
+               <Scaler>MeanStandardDeviation</Scaler>
+            </ScalingNeuron>
+            <ScalingNeuron Index="2">
+               <Minimum>2</Minimum>
+               <Maximum>4.4</Maximum>
+               <Mean>3.054</Mean>
+               <StandardDeviation>0.433594</StandardDeviation>
+               <Scaler>MeanStandardDeviation</Scaler>
+            </ScalingNeuron>
+            <ScalingNeuron Index="3">
+               <Minimum>1</Minimum>
+               <Maximum>6.9</Maximum>
+               <Mean>3.75867</Mean>
+               <StandardDeviation>1.76442</StandardDeviation>
+               <Scaler>MeanStandardDeviation</Scaler>
+            </ScalingNeuron>
+            <ScalingNeuron Index="4">
+               <Minimum>0.1</Minimum>
+               <Maximum>2.5</Maximum>
+               <Mean>1.19867</Mean>
+               <StandardDeviation>0.763161</StandardDeviation>
+               <Scaler>MeanStandardDeviation</Scaler>
+            </ScalingNeuron>
+         </ScalingLayer>
+         <PerceptronLayer>
+            <LayerName>perceptron_layer_1</LayerName>
+            <InputsNumber>4</InputsNumber>
+            <NeuronsNumber>5</NeuronsNumber>
+            <ActivationFunction>HyperbolicTangent</ActivationFunction>
+            <Parameters>-0.401705 -0.422609 -1.48316 1.69621 -0.412849 -0.201172 0.288502 -0.572578 -0.577079 -0.207579 0.285729 -0.57707 -0.589322 -0.251087 -0.209295 1.78471 0.685827 0.288001 0.236916 -2.02294 -0.752222 -0.207514 0.286173 -0.572951 -0.579734</Parameters>
+         </PerceptronLayer>
+         <ProbabilisticLayer>
+            <InputsNumber>5</InputsNumber>
+            <NeuronsNumber>3</NeuronsNumber>
+            <ActivationFunction>Softmax</ActivationFunction>
+            <Parameters>0.2786 -0.377665 0.098577 1.08189 1.09169 -0.552756 0.52699 1.08665 -0.726969 -0.75644 -1.37711 1.63569 -0.742789 -0.355297 -0.336327 1.92911 -2.16348 -0.344777</Parameters>
+            <DecisionThreshold>0.5</DecisionThreshold>
+         </ProbabilisticLayer>
+      </Layers>
+      <Outputs>
+         <OutputsNumber>3</OutputsNumber>
+         <Output Index="1">iris_setosa</Output>
+         <Output Index="2">iris_versicolor</Output>
+         <Output Index="3">iris_virginica</Output>
+      </Outputs>
+   </NeuralNetwork>
+   <TrainingStrategy>
+      <LossIndex>
+         <LossMethod>NORMALIZED_SQUARED_ERROR</LossMethod>
+         <MeanSquaredError/>
+         <NormalizedSquaredError/>
+         <MinkowskiError>
+            <MinkowskiParameter>1.5</MinkowskiParameter>
+         </MinkowskiError>
+         <CrossEntropyError/>
+         <WeightedSquaredError>
+            <PositivesWeight>1</PositivesWeight>
+            <NegativesWeight>1</NegativesWeight>
+         </WeightedSquaredError>
+         <Regularization Type="L2_NORM">
+            <RegularizationWeight>0.01</RegularizationWeight>
+         </Regularization>
+      </LossIndex>
+      <OptimizationAlgorithm>
+         <OptimizationMethod>QUASI_NEWTON_METHOD</OptimizationMethod>
+         <GradientDescent>
+            <LearningRateAlgorithm>
+               <LearningRateMethod>BrentMethod</LearningRateMethod>
+               <LearningRateTolerance>0.001</LearningRateTolerance>
+            </LearningRateAlgorithm>
+            <MinimumLossDecrease>0</MinimumLossDecrease>
+            <LossGoal>0.001</LossGoal>
+            <MaximumSelectionErrorIncreases>100</MaximumSelectionErrorIncreases>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </GradientDescent>
+         <ConjugateGradient>
+            <TrainingDirectionMethod>FR</TrainingDirectionMethod>
+            <LearningRateAlgorithm>
+               <LearningRateMethod>BrentMethod</LearningRateMethod>
+               <LearningRateTolerance>0.001</LearningRateTolerance>
+            </LearningRateAlgorithm>
+            <MinimumLossDecrease>0</MinimumLossDecrease>
+            <LossGoal>0.001</LossGoal>
+            <MaximumSelectionErrorIncreases>100</MaximumSelectionErrorIncreases>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </ConjugateGradient>
+         <StochasticGradientDescent>
+            <BatchSize>1000</BatchSize>
+            <ApplyMomentum>0</ApplyMomentum>
+            <LossGoal>0.001</LossGoal>
+            <MaximumEpochsNumber>10000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </StochasticGradientDescent>
+         <AdaptiveMomentEstimation>
+            <BatchSize>1000</BatchSize>
+            <LossGoal>0.001</LossGoal>
+            <MaximumEpochsNumber>10000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </AdaptiveMomentEstimation>
+         <QuasiNewtonMethod>
+            <InverseHessianApproximationMethod>BFGS</InverseHessianApproximationMethod>
+            <LearningRateAlgorithm>
+               <LearningRateMethod>BrentMethod</LearningRateMethod>
+               <LearningRateTolerance>0.001</LearningRateTolerance>
+            </LearningRateAlgorithm>
+            <MinimumLossDecrease>0</MinimumLossDecrease>
+            <LossGoal>0.001</LossGoal>
+            <MaximumSelectionErrorIncreases>100</MaximumSelectionErrorIncreases>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </QuasiNewtonMethod>
+         <LevenbergMarquardt>
+            <DampingParameterFactor>10</DampingParameterFactor>
+            <MinimumLossDecrease>0</MinimumLossDecrease>
+            <LossGoal>0.001</LossGoal>
+            <MaximumSelectionErrorIncreases>100</MaximumSelectionErrorIncreases>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+            <HardwareUse>Multi-core</HardwareUse>
+         </LevenbergMarquardt>
+      </OptimizationAlgorithm>
+   </TrainingStrategy>
+   <ModelSelection>
+      <NeuronsSelection>
+         <NeuronsSelectionMethod>GROWING_NEURONS</NeuronsSelectionMethod>
+         <GrowingNeurons>
+            <MinimumNeurons>1</MinimumNeurons>
+            <MaximumNeurons>10</MaximumNeurons>
+            <Step>1</Step>
+            <TrialsNumber>3</TrialsNumber>
+            <SelectionErrorGoal>0</SelectionErrorGoal>
+            <MaximumSelectionFailures>999999999</MaximumSelectionFailures>
+            <MaximumTime>3600</MaximumTime>
+         </GrowingNeurons>
+      </NeuronsSelection>
+      <InputsSelection>
+         <InputsSelectionMethod>GROWING_INPUTS</InputsSelectionMethod>
+         <GrowingInputs>
+            <TrialsNumber>3</TrialsNumber>
+            <SelectionErrorGoal>0</SelectionErrorGoal>
+            <MaximumSelectionFailures>999999999</MaximumSelectionFailures>
+            <MinimumInputsNumber>1</MinimumInputsNumber>
+            <MaximumInputsNumber>4</MaximumInputsNumber>
+            <MinimumCorrelation>0</MinimumCorrelation>
+            <MaximumCorrelation>1</MaximumCorrelation>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+         </GrowingInputs>
+         <PruningInputs>
+            <TrialsNumber>3</TrialsNumber>
+            <SelectionErrorGoal>0</SelectionErrorGoal>
+            <MaximumSelectionFailures>999999999</MaximumSelectionFailures>
+            <MinimumInputsNumber>1</MinimumInputsNumber>
+            <MaximumInputsNumber>4</MaximumInputsNumber>
+            <MinimumCorrelation>0</MinimumCorrelation>
+            <MaximumCorrelation>1</MaximumCorrelation>
+            <MaximumEpochsNumber>1000</MaximumEpochsNumber>
+            <MaximumTime>3600</MaximumTime>
+         </PruningInputs>
+         <GeneticAlgorithm>
+            <PopulationSize>10</PopulationSize>
+            <ElitismSize>2</ElitismSize>
+            <MutationRate>0.1</MutationRate>
+            <SelectionErrorGoal>0</SelectionErrorGoal>
+            <MaximumGenerationsNumber>100</MaximumGenerationsNumber>
+            <MaximumTime>3600</MaximumTime>
+         </GeneticAlgorithm>
+      </InputsSelection>
+   </ModelSelection>
+</NeuralDesignerProject>
