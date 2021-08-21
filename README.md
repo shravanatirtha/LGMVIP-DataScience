@@ -1,5 +1,5 @@
 # LGMVIP-DataScience
-### Data Science Intership Files
+### Data Science Intership Tasks (Beginner and Intermediate)
 ### Task1 Task6 - Iris Classification and Prediction using Decision Tree
 ![image](https://user-images.githubusercontent.com/34398606/129534090-3dc15bf5-1932-4240-9c47-0f4e21e8c616.png)
 
